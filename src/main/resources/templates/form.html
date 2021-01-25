@@ -1,0 +1,30 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
+<div class="w3-container">
+    <h1>HR Department</h1>
+</div>
+
+<form class="w3-panel w3-card-4" action="#" th:action="@{/}" th:object="${personForm}" method="post">
+    <h2>Personal data</h2>
+    <table>
+        <tr>
+            <td>First Name:</td>
+            <td><input type="text" class="w3-input" placeholder="First name" th:field="*{firstName}" /></td>
+            <td class="w3-text-red" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></td>
+        </tr>
+        <tr>
+            <td>Last Name:</td>
+            <td><input type="text" class="w3-input" placeholder="Last name" th:field="*{lastName}" /></td>
+            <td class="w3-text-red" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></td>
+        </tr>
+        <tr>
+            <td><button class="w3-button w3-black" type="submit">Submit</button></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
